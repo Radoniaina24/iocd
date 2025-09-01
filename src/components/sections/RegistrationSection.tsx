@@ -1,92 +1,108 @@
-import React, { useState } from 'react';
-import { Send, User, Mail, Phone, Building, MapPin, Calendar, Heart } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Send,
+  User,
+  Mail,
+  Phone,
+  Building,
+  MapPin,
+  Calendar,
+  Heart,
+} from "lucide-react";
 
 const RegistrationSection = () => {
   const [formData, setFormData] = useState({
     // Informations personnelles
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+
     // Informations professionnelles
-    company: '',
-    position: '',
-    sector: '',
-    country: '',
-    
+    company: "",
+    position: "",
+    sector: "",
+    country: "",
+
     // Participation
-    participantType: '',
+    participantType: "",
     interests: [] as string[],
-    
+
     // Hébergement et préférences
-    accommodation: '',
-    dietaryRestrictions: '',
-    
+    accommodation: "",
+    dietaryRestrictions: "",
+
     // Communication
     newsletter: false,
-    terms: false
+    terms: false,
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value, type } = e.target;
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       const checked = (e.target as HTMLInputElement).checked;
-      setFormData(prev => ({ ...prev, [name]: checked }));
+      setFormData((prev) => ({ ...prev, [name]: checked }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
   const handleInterestChange = (interest: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       interests: prev.interests.includes(interest)
-        ? prev.interests.filter(i => i !== interest)
-        : [...prev.interests, interest]
+        ? prev.interests.filter((i) => i !== interest)
+        : [...prev.interests, interest],
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Ici vous intégreriez avec votre système d'inscription
-    alert('Merci pour votre inscription ! Nous vous recontacterons sous 48h.');
+    alert("Merci pour votre inscription ! Nous vous recontacterons sous 48h.");
   };
 
   const participantTypes = [
-    { value: 'entrepreneur', label: 'Entrepreneur PME (150€)' },
-    { value: 'institution', label: 'Institution/ONG (100€)' },
-    { value: 'investor', label: 'Investisseur/Financier (300€)' },
-    { value: 'student', label: 'Étudiant/Chercheur (50€)' }
+    { value: "entrepreneur", label: "Entrepreneur PME (150€)" },
+    { value: "institution", label: "Institution/ONG (100€)" },
+    { value: "investor", label: "Investisseur/Financier (300€)" },
+    { value: "student", label: "Étudiant/Chercheur (50€)" },
   ];
 
   const interestOptions = [
-    'Accès au financement',
-    'Marketing digital',
-    'Tourisme responsable',
-    'Innovation technologique',
-    'Partenariats stratégiques',
-    'Développement durable',
-    'Réglementation',
-    'Export/International'
+    "Accès au financement",
+    "Marketing digital",
+    "Tourisme responsable",
+    "Innovation technologique",
+    "Partenariats stratégiques",
+    "Développement durable",
+    "Réglementation",
+    "Export/International",
   ];
 
   const accommodationOptions = [
-    { value: '', label: 'Sélectionnez une option' },
-    { value: 'hotel-partner', label: 'Hôtel partenaire (tarif préférentiel)' },
-    { value: 'own-arrangement', label: 'Hébergement personnel' },
-    { value: 'need-help', label: 'Besoin d\'aide pour l\'hébergement' }
+    { value: "", label: "Sélectionnez une option" },
+    { value: "hotel-partner", label: "Hôtel partenaire (tarif préférentiel)" },
+    { value: "own-arrangement", label: "Hébergement personnel" },
+    { value: "need-help", label: "Besoin d'aide pour l'hébergement" },
   ];
 
   return (
-    <section id="inscription" className="py-24 bg-gradient-to-br from-teal-600 via-blue-700 to-purple-800 relative overflow-hidden">
+    <section
+      id="inscription"
+      className="py-24 bg-gradient-to-br from-teal-600 via-blue-700 to-purple-800 relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-500/20 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 relative z-10">
@@ -97,19 +113,22 @@ const RegistrationSection = () => {
             <span className="bg-gradient-to-r from-white via-yellow-200 to-orange-200 bg-clip-text text-transparent">
               Manifestation
             </span>
-            <br/>
+            <br />
             <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text text-transparent">
               d'Intérêt
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-medium">
-            Rejoignez-nous pour cette expérience transformatrice. Remplissez le formulaire 
-            pour réserver votre place à IOCDAFRICA 2024.
+            Rejoignez-nous pour cette expérience transformatrice. Remplissez le
+            formulaire pour réserver votre place à IOCDAFRICA 2024.
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-12 border-2 border-white/50 relative z-10">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-12 border-2 border-white/50 relative z-10"
+        >
           {/* Personal Information */}
           <div className="mb-12">
             <h3 className="flex items-center text-2xl font-black text-gray-900 mb-8">
@@ -263,8 +282,8 @@ const RegistrationSection = () => {
                   key={type.value}
                   className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
                     formData.participantType === type.value
-                      ? 'border-teal-500 bg-teal-50'
-                      : 'border-gray-200 hover:border-gray-300'
+                      ? "border-teal-500 bg-teal-50"
+                      : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
                   <input
@@ -276,13 +295,17 @@ const RegistrationSection = () => {
                     className="sr-only"
                   />
                   <div className="flex-1">
-                    <div className="font-medium text-gray-900">{type.label}</div>
+                    <div className="font-medium text-gray-900">
+                      {type.label}
+                    </div>
                   </div>
-                  <div className={`w-4 h-4 rounded-full border-2 ${
-                    formData.participantType === type.value
-                      ? 'border-teal-500 bg-teal-500'
-                      : 'border-gray-300'
-                  }`}>
+                  <div
+                    className={`w-4 h-4 rounded-full border-2 ${
+                      formData.participantType === type.value
+                        ? "border-teal-500 bg-teal-500"
+                        : "border-gray-300"
+                    }`}
+                  >
                     {formData.participantType === type.value && (
                       <div className="w-full h-full rounded-full bg-white transform scale-50"></div>
                     )}
@@ -293,7 +316,7 @@ const RegistrationSection = () => {
           </div>
 
           {/* Interests */}
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <h3 className="flex items-center text-xl font-semibold text-gray-900 mb-6">
               <Heart className="w-5 h-5 mr-2 text-teal-600" />
               Centres d'Intérêt
@@ -321,7 +344,7 @@ const RegistrationSection = () => {
                 </label>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Accommodation & Preferences */}
           <div className="mb-8">
@@ -374,10 +397,11 @@ const RegistrationSection = () => {
                 className="mt-1 w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
               />
               <span className="text-sm text-gray-700">
-                Je souhaite recevoir les actualités IOCDAFRICA et les opportunités du réseau
+                Je souhaite recevoir les actualités IOCDAFRICA et les
+                opportunités du réseau
               </span>
             </label>
-            
+
             <label className="flex items-start space-x-3 cursor-pointer">
               <input
                 type="checkbox"
@@ -388,8 +412,15 @@ const RegistrationSection = () => {
                 className="mt-1 w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
               />
               <span className="text-sm text-gray-700">
-                J'accepte les <a href="#" className="text-teal-600 hover:underline">conditions générales</a> 
-                et la <a href="#" className="text-teal-600 hover:underline">politique de confidentialité</a> *
+                J'accepte les{" "}
+                <a href="#" className="text-teal-600 hover:underline">
+                  conditions générales
+                </a>
+                et la{" "}
+                <a href="#" className="text-teal-600 hover:underline">
+                  politique de confidentialité
+                </a>{" "}
+                *
               </span>
             </label>
           </div>
@@ -404,7 +435,8 @@ const RegistrationSection = () => {
               Envoyer ma manifestation d'intérêt
             </button>
             <p className="text-sm text-gray-600 mt-4">
-              Vous recevrez une confirmation par email dans les 48h avec les détails de paiement
+              Vous recevrez une confirmation par email dans les 48h avec les
+              détails de paiement
             </p>
           </div>
         </form>
@@ -415,22 +447,22 @@ const RegistrationSection = () => {
             <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <Mail className="w-6 h-6 text-teal-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
-            <p className="text-gray-600">contact@iocdafrica.com</p>
+            <h4 className="font-semibold text-white mb-2">Email</h4>
+            <p className="text-white">contact@iocdafrica.com</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <Phone className="w-6 h-6 text-teal-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Téléphone</h4>
-            <p className="text-gray-600">+230 xxx xxxx</p>
+            <h4 className="font-semibold text-white mb-2">Téléphone</h4>
+            <p className="text-white">+230 xxx xxxx</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-6 h-6 text-teal-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Lieu</h4>
-            <p className="text-gray-600">Port Louis, Île Maurice</p>
+            <h4 className="font-semibold text-white mb-2">Lieu</h4>
+            <p className="text-white">Port Louis, Île Maurice</p>
           </div>
         </div>
       </div>

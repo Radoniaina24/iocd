@@ -1,9 +1,11 @@
-import React from 'react';
-import { ArrowRight, Calendar, MapPin, Users } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900">
+    <section
+      id="accueil"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -11,7 +13,7 @@ const HeroSection = () => {
           alt="Île Maurice - Plage paradisiaque"
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-teal-800/80 to-purple-900/70"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-teal-800/80 to-purple-900/70"></div> */}
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
@@ -25,7 +27,7 @@ const HeroSection = () => {
                 Conférence Internationale
               </span>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
               <span className="block bg-gradient-to-r from-white via-teal-100 to-blue-200 bg-clip-text text-transparent">
                 IOCDAFRICA
@@ -34,9 +36,10 @@ const HeroSection = () => {
                 Tourisme Durable
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl mb-10 text-gray-100 leading-relaxed font-light">
-              🚀 Transformez votre vision entrepreneuriale en impact durable.<br/>
+              🚀 Transformez votre vision entrepreneuriale en impact durable.
+              <br />
               🌍 Rejoignez les leaders du tourisme responsable à l'Île Maurice.
             </p>
 
@@ -44,11 +47,15 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-6 mb-10">
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
                 <Calendar className="w-5 h-5 text-teal-300" />
-                <span className="text-lg font-medium">18-19 Septembre 2024</span>
+                <span className="text-lg font-medium">
+                  18-19 Septembre 2024
+                </span>
               </div>
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
                 <MapPin className="w-5 h-5 text-teal-300" />
-                <span className="text-lg font-medium">Port Louis, Île Maurice</span>
+                <span className="text-lg font-medium">
+                  Port Louis, Île Maurice
+                </span>
               </div>
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
                 <Users className="w-5 h-5 text-teal-300" />
@@ -82,25 +89,41 @@ const HeroSection = () => {
               </h3>
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
-                  <div className="text-4xl font-black bg-gradient-to-r from-teal-300 to-blue-300 bg-clip-text text-transparent mb-2">500+</div>
-                  <div className="text-sm text-gray-200 font-medium">Participants</div>
+                  <div className="text-4xl font-black bg-gradient-to-r from-teal-300 to-blue-300 bg-clip-text text-transparent mb-2">
+                    500+
+                  </div>
+                  <div className="text-sm text-gray-200 font-medium">
+                    Participants
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-black bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent mb-2">150+</div>
+                  <div className="text-4xl font-black bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent mb-2">
+                    150+
+                  </div>
                   <div className="text-sm text-gray-200 font-medium">PME</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-black bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent mb-2">50+</div>
-                  <div className="text-sm text-gray-200 font-medium">Projets</div>
+                  <div className="text-4xl font-black bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent mb-2">
+                    50+
+                  </div>
+                  <div className="text-sm text-gray-200 font-medium">
+                    Projets
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-black bg-gradient-to-r from-pink-300 to-orange-300 bg-clip-text text-transparent mb-2">20M€</div>
-                  <div className="text-sm text-gray-200 font-medium">Financement</div>
+                  <div className="text-4xl font-black bg-gradient-to-r from-pink-300 to-orange-300 bg-clip-text text-transparent mb-2">
+                    20M€
+                  </div>
+                  <div className="text-sm text-gray-200 font-medium">
+                    Financement
+                  </div>
                 </div>
               </div>
               <div className="mt-8 text-center">
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full border border-yellow-300/30">
-                  <span className="text-yellow-200 text-sm font-semibold">💰 Opportunités d'investissement exceptionnelles</span>
+                  <span className="text-yellow-200 text-sm font-semibold">
+                    💰 Opportunités d'investissement exceptionnelles
+                  </span>
                 </div>
               </div>
             </div>
