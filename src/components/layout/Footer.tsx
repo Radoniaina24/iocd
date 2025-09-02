@@ -13,7 +13,7 @@ const Footer = () => {
     { href: "#accueil", label: "Accueil" },
     { href: "#apropos", label: "À Propos" },
     { href: "#programme", label: "Programme" },
-    { href: "#intervenants", label: "Intervenants" },
+    // { href: "#intervenants", label: "Intervenants" },
     { href: "#inscription", label: "Inscription" },
   ];
 
