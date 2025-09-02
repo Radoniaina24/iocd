@@ -448,21 +448,21 @@ const RegistrationSection = () => {
               <Mail className="w-6 h-6 text-teal-600" />
             </div>
             <h4 className="font-semibold text-white mb-2">Email</h4>
-            <p className="text-white">contact@iocdafrica.com</p>
+            <p className="text-white">iocdafrica.edu@gmail.com</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <Phone className="w-6 h-6 text-teal-600" />
             </div>
             <h4 className="font-semibold text-white mb-2">Téléphone</h4>
-            <p className="text-white">+230 xxx xxxx</p>
+            <p className="text-white">Whatsapp 57509443 </p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-6 h-6 text-teal-600" />
             </div>
             <h4 className="font-semibold text-white mb-2">Lieu</h4>
-            <p className="text-white">Port Louis, Île Maurice</p>
+            <p className="text-white">La Louise Q. Bornes, Île Maurice</p>
           </div>
         </div>
       </div>
