@@ -3,7 +3,6 @@ import HeroSection from "./components/sections/HeroSection";
 import StatsSection from "./components/sections/StatsSection";
 import AboutSection from "./components/sections/AboutSection";
 import ProgramSection from "./components/sections/ProgramSection";
-import SpeakersSection from "./components/sections/SpeakersSection";
 
 import RegistrationSection from "./components/sections/RegistrationSection";
 import Footer from "./components/layout/Footer";
@@ -15,6 +14,7 @@ function App() {
       <main>
         <HeroSection />
         <StatsSection />
+
         <AboutSection />
         <ProgramSection />
         {/* <SpeakersSection /> */}
