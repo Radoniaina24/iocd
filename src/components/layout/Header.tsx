@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Calendar } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Menu, X, MapPin, Calendar } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,22 +9,26 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { href: '#accueil', label: 'Accueil' },
-    { href: '#apropos', label: 'À Propos' },
-    { href: '#programme', label: 'Programme' },
-    { href: '#intervenants', label: 'Intervenants' },
-    { href: '#inscription', label: 'Inscription' },
+    { href: "#accueil", label: "Accueil" },
+    { href: "#apropos", label: "À Propos" },
+    { href: "#programme", label: "Programme" },
+    // { href: '#intervenants', label: 'Intervenants' },
+    { href: "#inscription", label: "Inscription" },
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50' : 'bg-white/80 backdrop-blur-xl'
-    }`}>
+    <header
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50"
+          : "bg-white/80 backdrop-blur-xl"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -33,8 +37,12 @@ const Header = () => {
               <span className="text-white font-black text-xl">IO</span>
             </div>
             <div>
-              <h1 className="text-2xl font-black text-gray-900 hover:text-teal-700 transition-colors duration-300">IOCDAFRICA</h1>
-              <p className="text-xs text-gray-600 font-bold">🌍 Tourisme Durable</p>
+              <h1 className="text-2xl font-black text-gray-900 hover:text-teal-700 transition-colors duration-300">
+                IOCDAFRICA
+              </h1>
+              <p className="text-xs text-gray-600 font-bold">
+                🌍 Tourisme Durable
+              </p>
             </div>
           </div>
 
@@ -69,7 +77,11 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-teal-600 transition-colors"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
