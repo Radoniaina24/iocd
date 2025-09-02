@@ -17,7 +17,7 @@ function App() {
         <StatsSection />
         <AboutSection />
         <ProgramSection />
-        <SpeakersSection />
+        {/* <SpeakersSection /> */}
         {/* <ParticipantsSection /> */}
         <RegistrationSection />
       </main>

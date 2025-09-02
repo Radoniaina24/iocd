@@ -425,12 +425,12 @@ const ProgramSection = () => {
                 🚀 S'inscrire Maintenant
                 <ChevronRight className="ml-2 w-6 h-6" />
               </a>
-              <a
+              {/* <a
                 href="#intervenants"
                 className="inline-flex items-center px-10 py-5 bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-lg"
               >
                 👥 Voir les Experts
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
